@@ -1,0 +1,20 @@
+{
+  // Nazwa NOWEGO, osobnego Workera — celowo inna niż istniejący produkcyjny
+  // "braciasordyl", żeby to wdrożenie nie nadpisało obecnej, żywej strony.
+  // Po sprawdzeniu podglądu możesz zmienić tę nazwę na docelową i wdrożyć
+  // ponownie (albo skonfigurować custom domain w dashboardzie Cloudflare).
+  "name": "braciasordyl-podglad-v2",
+  "compatibility_date": "2026-07-08",
+  "main": "./dist/_worker.js",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "s-brothers-media"
+    }
+  ]
+}

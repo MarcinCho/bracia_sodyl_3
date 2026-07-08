@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pracownia Stolarska Bracia Sordyl — wersja podglądowa v2</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,680&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --ink: #16303a;
+  --ink-2: #1e3f4b;
+  --ink-soft: #33505c;
+  --paper: #ece3d0;
+  --paper-2: #e2d7bd;
+  --oak: #9a5a2c;
+  --oak-dark: #7a4620;
+  --walnut: #251d15;
+  --brass: #a9863f;
+  --chalk: #f7f2e4;
+  --line: rgba(37, 29, 21, .18);
+  --line-dark: rgba(247, 242, 228, .22);
+  --radius: 0;
+  --maxw: 1220px;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Archivo', "Segoe UI", Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, "Courier New", monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--font-body); color: var(--walnut); background: var(--paper); line-height: 1.62; font-size: 16px; }
+img, .ph { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0 0 .5em; letter-spacing: -.01em; }
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+.eyebrow { font-family: var(--font-mono); letter-spacing: .08em; text-transform: uppercase; font-size: .74rem; color: var(--oak); font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+.eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--oak); display: inline-block; }
+.bg-dark .eyebrow, .bg-dark .eyebrow::before { color: var(--brass); background: var(--brass); }
+.btn { display: inline-block; padding: 15px 28px; background: var(--oak); color: var(--chalk); font-family: var(--font-mono); font-weight: 600; letter-spacing: .03em; text-transform: uppercase; font-size: .78rem; border: 1px solid var(--oak); cursor: pointer; }
+.btn:hover { background: var(--oak-dark); border-color: var(--oak-dark); }
+.btn-outline { display: inline-block; padding: 14px 27px; background: transparent; color: var(--chalk); border: 1px solid rgba(247,242,228,.45); font-family: var(--font-mono); font-weight: 600; letter-spacing: .03em; text-transform: uppercase; font-size: .76rem; }
+.btn-outline:hover { border-color: var(--brass); color: var(--brass); }
+.plate { position: relative; border: 1px solid var(--line); }
+.plate::before, .plate::after { content: ""; position: absolute; width: 11px; height: 11px; }
+.plate::before { top: -1px; left: -1px; border-top: 2px solid var(--oak); border-left: 2px solid var(--oak); }
+.plate::after { top: -1px; right: -1px; border-top: 2px solid var(--oak); border-right: 2px solid var(--oak); }
+.spec-block { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line-dark); }
+.spec-item { padding: 16px 18px; border-left: 1px solid var(--line-dark); }
+.spec-item:first-child { border-left: none; }
+.spec-value { font-family: var(--font-display); font-size: 1.7rem; color: var(--brass); line-height: 1; margin-bottom: 6px; }
+.spec-label { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; color: #cdd6d3; }
+header.site-header { position: sticky; top: 0; z-index: 100; background: var(--ink); border-bottom: 1px solid var(--line-dark); }
+.header-top { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; max-width: var(--maxw); margin: 0 auto; }
+.logo { display: flex; align-items: center; gap: 12px; color: var(--chalk); }
+.logo-mark { width: 38px; height: 38px; border: 1px solid var(--brass); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 600; color: var(--brass); font-size: .95rem; }
+.logo-text { font-family: var(--font-display); line-height: 1.15; }
+.logo-text strong { display: block; font-size: 1.08rem; font-weight: 600; }
+.logo-text span { display: block; font-family: var(--font-mono); font-size: .62rem; letter-spacing: .07em; color: var(--brass); text-transform: uppercase; margin-top: 2px; }
+nav.main-nav { display: flex; align-items: center; gap: 30px; }
+nav.main-nav a { color: var(--chalk); font-family: var(--font-mono); font-size: .76rem; letter-spacing: .05em; text-transform: uppercase; padding: 6px 0; border-bottom: 2px solid transparent; }
+nav.main-nav a:hover { border-color: var(--brass); color: var(--brass); }
+.header-actions { display: flex; align-items: center; gap: 18px; }
+.header-phone { color: var(--chalk); font-family: var(--font-mono); font-size: .82rem; }
+.header-phone strong { color: var(--brass); }
+@media (max-width: 880px) { nav.main-nav { display: none; } }
+.hero { position: relative; background: var(--ink); color: var(--chalk); overflow: hidden; }
+.hero-grid { position: relative; max-width: var(--maxw); margin: 0 auto; padding: 64px 28px 0; display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; }
+@media (max-width: 980px) { .hero-grid { grid-template-columns: 1fr; } }
+.hero > .container { padding-bottom: 56px; }
+.hero-copy h1 { font-size: clamp(2.1rem, 3.9vw, 3.15rem); color: #fff; max-width: 640px; }
+.hero-copy .lead { max-width: 540px; font-size: 1.05rem; color: #d9d2bd; margin-bottom: 30px; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+.hero-drawing { position: relative; padding: 10px 0 0; }
+.hero-drawing svg { width: 100%; height: auto; display: block; }
+.hero-drawing-caption { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .04em; color: #93a3a1; display: flex; justify-content: space-between; margin-top: 10px; border-top: 1px solid var(--line-dark); padding-top: 10px; }
+.blueprint-line { stroke-dasharray: 900; stroke-dashoffset: 900; animation: draw-in 2.1s ease forwards .2s; }
+@media (prefers-reduced-motion: reduce) { .blueprint-line { animation: none; stroke-dashoffset: 0; } }
+@keyframes draw-in { to { stroke-dashoffset: 0; } }
+.diagram-label { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .04em; fill: #93a3a1; text-transform: uppercase; }
+.ph { position: relative; background: linear-gradient(150deg, var(--ink-2), var(--ink) 65%); color: #cbb98a; display: flex; align-items: flex-end; min-height: 160px; border: 1px solid var(--line-dark); overflow: hidden; }
+.ph-label { position: relative; z-index: 1; padding: 14px 16px; font-size: .74rem; line-height: 1.4; background: linear-gradient(0deg, rgba(0,0,0,.55), transparent); width: 100%; }
+.ph-label b { display: block; color: var(--brass); font-size: .66rem; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 2px; }
+section { padding: 84px 0; }
+.section-head { max-width: 640px; margin: 0 auto 46px; text-align: center; }
+.section-head h2 { font-size: 2rem; }
+.section-head p { color: var(--ink-soft); }
+.bg-dark { background: var(--ink); color: var(--chalk); }
+.bg-dark .section-head p { color: #b9c3bf; }
+.bg-dark h2, .bg-dark h3 { color: #fff; }
+.cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+@media (max-width: 1080px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
+.cat-card { background: var(--paper); display: flex; flex-direction: column; cursor: pointer; }
+.cat-card:hover { outline: 1px solid var(--oak); outline-offset: -1px; }
+.cat-card-body { padding: 22px 20px; flex: 1; display: flex; flex-direction: column; }
+.cat-card .eyebrow { font-size: .64rem; margin-bottom: 8px; }
+.cat-card h3 { font-size: 1.12rem; margin-bottom: 8px; }
+.cat-card p { color: var(--ink-soft); font-size: .9rem; flex: 1; }
+.cat-card .link-cta { margin-top: 16px; font-family: var(--font-mono); font-size: .72rem; letter-spacing: .04em; text-transform: uppercase; color: var(--oak); font-weight: 600; }
+.usp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-dark); border: 1px solid var(--line-dark); margin-top: 8px; }
+@media (max-width: 900px) { .usp-grid { grid-template-columns: repeat(2, 1fr); } }
+.usp-item { text-align: left; padding: 26px 24px; background: var(--ink); }
+.usp-tag { display: inline-block; font-family: var(--font-mono); font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); background: var(--brass); padding: 3px 8px; margin-bottom: 14px; }
+.usp-item h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.usp-item p { color: #b9c3bf; font-size: .9rem; }
+.video-wrap { position: relative; width: 100%; aspect-ratio: 16 / 9; background: var(--ink-2); max-width: 900px; margin: 0 auto; }
+.video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+.historia { display: grid; grid-template-columns: 1fr 1.05fr; gap: 54px; align-items: center; }
+@media (max-width: 860px) { .historia { grid-template-columns: 1fr; } }
+.historia .ph { height: 340px; }
+.historia-copy .eyebrow { margin-bottom: 12px; }
+.historia-copy p { color: #b9c3bf; }
+.contact-wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 54px; }
+@media (max-width: 900px) { .contact-wrap { grid-template-columns: 1fr; } }
+.contact-info h2 { font-size: 1.8rem; }
+.contact-list { list-style: none; padding: 0; margin: 24px 0; }
+.contact-list li { padding: 12px 0; border-bottom: 1px solid var(--line-dark); font-size: .95rem; }
+.contact-list b { display: block; font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; color: var(--brass); margin-bottom: 3px; }
+form.quote-form { background: var(--paper-2); border: 1px solid var(--line); padding: 32px; }
+form.quote-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+form.quote-form label { display: block; font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 7px; color: var(--ink); }
+form.quote-form input, form.quote-form select, form.quote-form textarea { width: 100%; padding: 12px 13px; border: 1px solid var(--line); font-size: .95rem; font-family: var(--font-body); background: var(--paper); }
+form.quote-form textarea { min-height: 110px; resize: vertical; }
+form.quote-form .field { margin-bottom: 16px; }
+footer.site-footer { background: var(--ink); color: #b9c3bf; padding: 60px 0 26px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; }
+@media (max-width: 860px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+footer.site-footer h4 { font-family: var(--font-mono); color: var(--brass); font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 16px; }
+footer.site-footer a { color: #b9c3bf; display: block; font-size: .9rem; margin-bottom: 9px; }
+footer.site-footer a:hover { color: var(--brass); }
+.footer-bottom { max-width: var(--maxw); margin: 44px auto 0; padding: 22px 28px 0; border-top: 1px solid var(--line-dark); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-family: var(--font-mono); font-size: .72rem; color: #7f8f8b; }
+.preview-banner { background: var(--oak); color: var(--chalk); text-align: center; font-size: .8rem; padding: 9px 16px; letter-spacing: .02em; font-family: var(--font-mono); }
+.preview-banner b { text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<div class="preview-banner"><b>Wersja podglądowa v2</b> — nowy kierunek wizualny + portfolio spłaszczone do 4 głównych obszarów. Zdjęcia zastąpione etykietowanymi placeholderami (prawdziwe zdjęcia w wersji Vue korzystają z R2).</div>
+
+<header class="site-header">
+  <div class="header-top">
+    <a class="logo" href="#">
+      <span class="logo-mark">BS</span>
+      <span class="logo-text"><strong>Bracia Sordyl</strong><span>Pracownia Stolarska od 1932 r.</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="#realizacje">Realizacje</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#dlaczego-my">Dlaczego my</a>
+      <a href="#historia">Historia</a>
+      <a href="#warsztat">Warsztat</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-phone" href="tel:+48604408916">604 408 916</a>
+      <a class="btn" href="#kontakt">Zapytaj o wycenę</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Pracownia Stolarska Bracia Sordyl · Andrychów</p>
+      <h1>Schody, meble i wnętrza z drewna szyte na miarę — od 1932 roku</h1>
+      <p class="lead">Projektujemy i wykonujemy indywidualne, prestiżowe realizacje stolarskie: od schodów i mebli kuchennych, przez wystrój wnętrz, po meble na wymiar. Trzecie pokolenie rzemiosła w jednej rodzinie.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="#kontakt">Zapytaj o bezpłatną wycenę</a>
+        <a class="btn-outline" href="#realizacje">Zobacz realizacje</a>
+      </div>
+    </div>
+    <div class="hero-drawing plate">
+      <svg viewBox="0 0 460 340" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="dimArrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+            <path d="M0,0 L8,4 L0,8 Z" fill="#93a3a1" />
+          </marker>
+        </defs>
+        <line x1="20" y1="298" x2="430" y2="298" stroke="#3a5964" stroke-width="1.5" />
+        <line x1="390" y1="298" x2="390" y2="74" stroke="#3a5964" stroke-width="1" stroke-dasharray="2 4" />
+        <path class="blueprint-line" d="M54,298 L96,298 L96,270 L138,270 L138,242 L180,242 L180,214 L222,214 L222,186 L264,186 L264,158 L306,158 L306,130 L348,130 L348,102 L390,102 L390,74 L430,74" fill="none" stroke="#f7f2e4" stroke-width="2.25" stroke-linejoin="round" />
+        <line class="blueprint-line" x1="54" y1="266" x2="390" y2="42" stroke="#a9863f" stroke-width="2" />
+        <line x1="88" y1="256" x2="88" y2="279" stroke="#a9863f" stroke-width="1.5" />
+        <line x1="150" y1="238" x2="150" y2="261" stroke="#a9863f" stroke-width="1.5" />
+        <line x1="212" y1="219" x2="212" y2="242" stroke="#a9863f" stroke-width="1.5" />
+        <line x1="274" y1="200" x2="274" y2="223" stroke="#a9863f" stroke-width="1.5" />
+        <line x1="336" y1="152" x2="336" y2="175" stroke="#a9863f" stroke-width="1.5" />
+        <line x1="380" y1="110" x2="380" y2="133" stroke="#a9863f" stroke-width="1.5" />
+        <line x1="412" y1="296" x2="412" y2="76" stroke="#93a3a1" stroke-width="1" marker-start="url(#dimArrow)" marker-end="url(#dimArrow)" />
+        <text x="420" y="190" class="diagram-label" transform="rotate(90 420 190)">WYSOKOŚĆ CAŁK. — H</text>
+        <line x1="54" y1="316" x2="390" y2="316" stroke="#93a3a1" stroke-width="1" marker-start="url(#dimArrow)" marker-end="url(#dimArrow)" />
+        <text x="140" y="332" class="diagram-label">DŁUGOŚĆ BIEGU — L</text>
+        <line x1="180" y1="242" x2="180" y2="200" stroke="#93a3a1" stroke-width="1" />
+        <line x1="180" y1="200" x2="234" y2="200" stroke="#93a3a1" stroke-width="1" />
+        <circle cx="180" cy="242" r="2.5" fill="#93a3a1" />
+      </svg>
+      <p class="hero-drawing-caption"><span>RYS. POGLĄDOWY — SCHODY SKRZYNKOWE</span><span>SKALA NIEZDEFINIOWANA</span></p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="spec-block">
+      <div class="spec-item"><div class="spec-value">1932</div><div class="spec-label">Rok założenia</div></div>
+      <div class="spec-item"><div class="spec-value">III</div><div class="spec-label">Pokolenie rzemiosła</div></div>
+      <div class="spec-item"><div class="spec-value">4</div><div class="spec-label">Głównych obszarów pracy</div></div>
+      <div class="spec-item"><div class="spec-value">100%</div><div class="spec-label">Na indywidualne zamówienie</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="oferta">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Oferta</p>
+      <h2>Cztery obszary pracy, jeden poziom rzemiosła</h2>
+      <p>Każdy projekt wykonujemy indywidualnie — od koncepcji, przez materiał, po montaż.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card"><div class="ph"><div class="ph-label"><b>Zdjęcie</b>Schody</div></div><div class="cat-card-body"><p class="eyebrow">Konstrukcje nośne</p><h3>Schody</h3><p>Klasyczne, skrzynkowe, wiszące i kręte — stabilna konstrukcja i efektowny wygląd na lata.</p><span class="link-cta">Zobacz galerię →</span></div></div>
+      <div class="cat-card"><div class="ph"><div class="ph-label"><b>Zdjęcie</b>Kuchnie</div></div><div class="cat-card-body"><p class="eyebrow">Meble użytkowe</p><h3>Kuchnie</h3><p>Kuchnie projektowane pod codzienne życie rodziny — ergonomiczne, trwałe, na indywidualne zamówienie.</p><span class="link-cta">Zobacz galerię →</span></div></div>
+      <div class="cat-card"><div class="ph"><div class="ph-label"><b>Zdjęcie</b>Wnętrza</div></div><div class="cat-card-body"><p class="eyebrow">Obiekty i wystrój</p><h3>Wnętrza</h3><p>Nietypowe wykończenia wnętrz z drewna: obiekty sakralne, hotele i kawiarnie, biblioteki i zabudowy.</p><span class="link-cta">Zobacz galerię →</span></div></div>
+      <div class="cat-card"><div class="ph"><div class="ph-label"><b>Zdjęcie</b>Meble na wymiar</div></div><div class="cat-card-body"><p class="eyebrow">Łazienki / sypialnie / ogród</p><h3>Meble na wymiar</h3><p>Zabudowy łazienkowe, meble sypialniane i elementy ogrodowe wykonane na indywidualny wymiar.</p><span class="link-cta">Zobacz galerię →</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="dlaczego-my" class="bg-dark">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Dlaczego Bracia Sordyl</p>
+      <h2>Rzemiosło, które wybierają wymagający klienci</h2>
+    </div>
+    <div class="usp-grid">
+      <div class="usp-item"><span class="usp-tag">Tradycja</span><h3>Rzemiosło od 1932 roku</h3><p>Trzecie pokolenie rzemieślników — od kołodziejstwa po dzisiejszą pracownię stolarską.</p></div>
+      <div class="usp-item"><span class="usp-tag">Projekt indywidualny</span><h3>Bez gotowych szablonów</h3><p>Każda realizacja projektowana pod konkretne wnętrze, budynek lub pojazd.</p></div>
+      <div class="usp-item"><span class="usp-tag">Realizacje nietypowe</span><h3>Obiekty wymagające precyzji</h3><p>Obiekty sakralne, hotele i restauracje — projekty o podwyższonych wymaganiach.</p></div>
+      <div class="usp-item"><span class="usp-tag">Konstrukcja</span><h3>Trwałość na lata</h3><p>Stabilność i jakość wykonania pozwalające na wieloletnie, bezpieczne użytkowanie.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="historia" class="bg-dark">
+  <div class="container">
+    <div class="historia">
+      <div class="ph"><div class="ph-label"><b>Zdjęcie archiwalne</b>Pracownia Bracia Sordyl</div></div>
+      <div class="historia-copy">
+        <p class="eyebrow">Nasza historia</p>
+        <h2>Rzemiosło przekazywane od 1932 roku</h2>
+        <p>Tradycja Pracowni Stolarskiej Braci Sordyl sięga 1932 roku, kiedy do Andrychowa przybył Jan Krzak — mistrz kołodziejski, dziadek braci Sordyl. Przez 46 lat rzemieślniczej działalności zdobył sobie renomę rzetelnego wykonawcy, m.in. wozów strażackich i wystroju regionalnych karczm.</p>
+        <p>Dziś tę tradycję kontynuują wnukowie kołodzieja — Jacek i Wojciech Sordyl — prowadząc pracownię przy ulicy Krakowskiej w Andrychowie.</p>
+        <a class="btn-outline" href="#kontakt">Poznaj naszą pracownię</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="warsztat" class="bg-dark">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Pracownia w akcji</p>
+      <h2>Zobacz, jak powstają nasze realizacje</h2>
+      <p>Krótki materiał z pracowni przy ulicy Krakowskiej w Andrychowie.</p>
+    </div>
+    <div class="video-wrap plate">
+      <iframe src="https://www.youtube-nocookie.com/embed/icFWoWmC7tE" title="Pracownia Stolarska Bracia Sordyl — film z pracowni" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <p class="eyebrow">Kontakt</p>
+        <h2>Porozmawiajmy o Twoim projekcie</h2>
+        <p>Odpowiadamy na zapytania w ciągu 1–2 dni roboczych.</p>
+        <ul class="contact-list">
+          <li><b>Adres</b>ul. Krakowska 70, 34-120 Andrychów</li>
+          <li><b>Telefon / fax</b>+48 33 875 46 90</li>
+          <li><b>Telefon komórkowy</b>+48 604 408 916</li>
+          <li><b>E-mail</b>braciasordyl@op.pl</li>
+        </ul>
+      </div>
+      <form class="quote-form">
+        <h3 style="margin-bottom:18px;color:var(--walnut);">Zapytaj o wycenę</h3>
+        <div class="row">
+          <div class="field"><label>Imię i nazwisko *</label><input type="text"></div>
+          <div class="field"><label>Telefon *</label><input type="tel"></div>
+        </div>
+        <div class="field"><label>Rodzaj projektu *</label>
+          <select><option>Schody</option><option>Kuchnie</option><option>Wnętrza</option><option>Meble na wymiar</option><option>Inne</option></select>
+        </div>
+        <div class="field"><label>Opis projektu *</label><textarea placeholder="Opisz pomieszczenie, wymiary, styl, termin realizacji..."></textarea></div>
+        <button class="btn" type="button">Wyślij zapytanie</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Pracownia Stolarska Bracia Sordyl</h4>
+      <p style="max-width:280px;font-size:.88rem;">Rodzinna pracownia stolarska w Andrychowie, tworząca indywidualne schody, meble i wnętrza z drewna od 1932 roku.</p>
+    </div>
+    <div>
+      <h4>Oferta</h4>
+      <a href="#oferta">Schody</a><a href="#oferta">Kuchnie</a><a href="#oferta">Wnętrza</a><a href="#oferta">Meble na wymiar</a>
+    </div>
+    <div>
+      <h4>Firma</h4>
+      <a href="#historia">Historia</a><a href="#warsztat">Pracownia w akcji</a><a href="#realizacje">Realizacje</a><a href="#kontakt">Kontakt</a>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <a href="tel:+48604408916">604 408 916</a><a href="mailto:braciasordyl@op.pl">braciasordyl@op.pl</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Pracownia Stolarska Bracia Sordyl.</span><span>Wersja podglądowa v2 — nie indeksować.</span></div>
+</footer>
+
+</body>
+</html>

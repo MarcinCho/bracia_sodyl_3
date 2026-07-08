@@ -1,0 +1,22 @@
+{
+  "name": "bracia-sordyl-podglad",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Wersja podglądowa v2 (redesign) strony głównej Bracia Sordyl — Vue 3 + Vite, gotowa do wdrożenia na Cloudflare Workers (assets + R2).",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && cp _worker.js dist/_worker.js && echo _worker.js > dist/.assetsignore",
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "vue": "^3.5.39",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.4",
+    "vite": "^5.4.21",
+    "wrangler": "^4.0.0"
+  }
+}
