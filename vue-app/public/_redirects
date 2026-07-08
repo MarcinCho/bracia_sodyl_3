@@ -1,1 +1,5 @@
-/*    /index.html   200
+# Nieużywane w wersji Workers (v2) — SPA fallback obsługuje teraz
+# "not_found_handling": "single-page-application" w wrangler.jsonc.
+# Ten plik zostawiony pusty specjalnie, bo katalog-catch-all "/* /index.html 200"
+# powodował błąd "Invalid _redirects configuration: infinite loop" przy
+# wrangler deploy (assets + SPA fallback już to załatwiają same).
