@@ -5,7 +5,6 @@ import DlaczegoMySection from '../components/DlaczegoMySection.vue'
 import RealizacjeSection from '../components/RealizacjeSection.vue'
 import HistoriaSection from '../components/HistoriaSection.vue'
 import WarsztatSection from '../components/WarsztatSection.vue'
-import OpinieSection from '../components/OpinieSection.vue'
 import KontaktSection from '../components/KontaktSection.vue'
 </script>
 
@@ -16,6 +15,5 @@ import KontaktSection from '../components/KontaktSection.vue'
   <RealizacjeSection />
   <HistoriaSection />
   <WarsztatSection />
-  <OpinieSection />
   <KontaktSection />
 </template>

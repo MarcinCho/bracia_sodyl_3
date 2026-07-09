@@ -9,7 +9,7 @@ const year = new Date().getFullYear()
     <div class="container footer-grid">
       <div>
         <h4>Pracownia Stolarska Bracia Sordyl</h4>
-        <p style="max-width:280px;font-size:.88rem;">Rodzinna pracownia stolarska w Andrychowie, tworząca indywidualne schody, meble i wnętrza z drewna od 1932 roku.</p>
+        <p style="max-width:280px;font-size:.88rem;">Rodzinna pracownia stolarska w Andrychowie, tworząca indywidualne schody, meble i wnętrza z drewna.</p>
         <div class="social-row">
           <a href="#" aria-label="Facebook">f</a>
           <a href="#" aria-label="Instagram">in</a>
@@ -24,7 +24,6 @@ const year = new Date().getFullYear()
         <a href="#historia">Historia</a>
         <a href="#warsztat">Pracownia w akcji</a>
         <router-link to="/realizacje">Realizacje</router-link>
-        <a href="#opinie">Opinie</a>
         <a href="#kontakt">Kontakt</a>
       </div>
       <div>

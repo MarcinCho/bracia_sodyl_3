@@ -1,6 +1,6 @@
 <script setup>
 const usps = [
-  { tag: 'Tradycja', title: 'Rzemiosło od 1932 roku', desc: 'Trzecie pokolenie rzemieślników — od kołodziejstwa po dzisiejszą pracownię stolarską.' },
+  { tag: 'Doświadczenie', title: 'Wielopokoleniowe rzemiosło', desc: 'Trzecie pokolenie rzemieślników w rodzinie — wiedza i precyzja przełożone na jakość każdej realizacji.' },
   { tag: 'Projekt indywidualny', title: 'Bez gotowych szablonów', desc: 'Każda realizacja projektowana pod konkretne wnętrze, budynek lub pojazd.' },
   { tag: 'Realizacje nietypowe', title: 'Obiekty wymagające precyzji', desc: 'Obiekty sakralne, hotele i restauracje — projekty o podwyższonych wymaganiach.' },
   { tag: 'Konstrukcja', title: 'Trwałość na lata', desc: 'Stabilność i jakość wykonania pozwalające na wieloletnie, bezpieczne użytkowanie.' }

@@ -15,7 +15,7 @@ function closeNav() {
     <div class="header-top">
       <a class="logo" href="#main" @click="closeNav">
         <span class="logo-mark">BS</span>
-        <span class="logo-text"><strong>Bracia Sordyl</strong><span>Pracownia Stolarska od 1932 r.</span></span>
+        <span class="logo-text"><strong>Bracia Sordyl</strong><span>Pracownia Stolarska</span></span>
       </a>
       <nav class="main-nav" :class="{ open: navOpen }" aria-label="Nawigacja główna">
         <router-link to="/realizacje" @click="closeNav">Realizacje</router-link>
@@ -27,6 +27,7 @@ function closeNav() {
       </nav>
       <div class="header-actions">
         <a class="header-phone" href="tel:+48604408916"><span class="label">Zadzwoń:</span> <strong>604 408 916</strong></a>
+        <router-link class="btn-outline" to="/realizacje">Nasze realizacje</router-link>
         <router-link class="btn" to="/#kontakt">Zapytaj o wycenę</router-link>
         <button class="nav-toggle" aria-label="Otwórz menu" @click="toggleNav">☰</button>
       </div>

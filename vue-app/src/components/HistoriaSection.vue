@@ -11,12 +11,11 @@ import { mediaUrl } from '../data/realizacje'
         </div>
         <div class="historia-copy">
           <p class="eyebrow">Nasza historia</p>
-          <h2>Rzemiosło przekazywane od 1932 roku</h2>
+          <h2>Rzemiosło przekazywane z pokolenia na pokolenie</h2>
           <p>
-            Tradycja Pracowni Stolarskiej Braci Sordyl sięga 1932 roku, kiedy do Andrychowa przybył
-            Jan Krzak — mistrz kołodziejski, dziadek braci Sordyl. Przez 46 lat rzemieślniczej
-            działalności zdobył sobie renomę rzetelnego wykonawcy, m.in. wozów strażackich i
-            wystroju regionalnych karczm.
+            Pracownia Stolarska Braci Sordyl wywodzi się z warsztatu Jana Krzaka — mistrza
+            kołodziejskiego i dziadka braci Sordyl, który zdobył sobie renomę rzetelnego wykonawcy,
+            m.in. wozów strażackich i wystroju regionalnych karczm.
           </p>
           <p>
             Dziś tę tradycję kontynuują wnukowie kołodzieja — Jacek i Wojciech Sordyl — prowadząc

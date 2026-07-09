@@ -1,9 +1,9 @@
 <script setup>
 const specItems = [
-  { value: '1932', label: 'Rok założenia' },
-  { value: 'III', label: 'Pokolenie rzemiosła' },
+  { value: 'III', label: 'Pokolenie rzemiosła w rodzinie' },
   { value: '4', label: 'Głównych obszarów pracy' },
-  { value: '100%', label: 'Na indywidualne zamówienie' }
+  { value: '100%', label: 'Na indywidualne zamówienie' },
+  { value: 'Projekt → montaż', label: 'Kompleksowa realizacja' }
 ]
 </script>
 
@@ -12,15 +12,15 @@ const specItems = [
     <div class="hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Pracownia Stolarska Bracia Sordyl · Andrychów</p>
-        <h1>Schody, meble i wnętrza z drewna szyte na miarę — od 1932 roku</h1>
+        <h1>Schody, meble i wnętrza z drewna szyte na miarę</h1>
         <p class="lead">
           Projektujemy i wykonujemy indywidualne, prestiżowe realizacje stolarskie: od schodów i mebli
-          kuchennych, przez wystrój wnętrz, po meble na wymiar. Trzecie pokolenie rzemiosła
-          w jednej rodzinie.
+          kuchennych, przez wystrój wnętrz, po meble na wymiar. Precyzyjne rzemiosło i pełna
+          realizacja projektu — od koncepcji po montaż.
         </p>
         <div class="hero-ctas">
-          <a class="btn" href="#kontakt">Zapytaj o bezpłatną wycenę</a>
-          <a class="btn-outline" href="#realizacje">Zobacz realizacje</a>
+          <a class="btn-outline" href="#realizacje">Zobacz nasze realizacje</a>
+          <a class="btn" href="#kontakt">Zapytaj o wycenę</a>
         </div>
       </div>
 

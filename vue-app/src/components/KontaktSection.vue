@@ -29,7 +29,7 @@ function submitForm() {
         <div class="contact-info">
           <p class="eyebrow">Kontakt</p>
           <h2>Porozmawiajmy o Twoim projekcie</h2>
-          <p>Odpowiadamy na zapytania w ciągu 1–2 dni roboczych. Im więcej szczegółów prześlesz, tym szybciej przygotujemy wstępną wycenę.</p>
+          <p>Im więcej szczegółów prześlesz, tym szybciej przygotujemy wstępną wycenę.</p>
           <ul class="contact-list">
             <li><b>Adres</b>ul. Krakowska 70, 34-120 Andrychów</li>
             <li><b>Telefon / fax</b><a href="tel:+48338754690">+48 33 875 46 90</a></li>
